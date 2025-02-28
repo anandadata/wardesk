@@ -2,9 +2,7 @@ streamlit
 pandas
 numpy
 pydeck
-geopandas
-plotly
-shapely
-requests
-pyproj
 gspread
+google-auth
+google-api-python-client
+requests
