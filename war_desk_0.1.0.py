@@ -227,8 +227,8 @@ st.markdown("""
 def get_drive_service():
     try:
         # Create credentials from service account file
-        credentials = service_account.Credentials.from_service_account_file(
-            'war-desk-ac2fb9643a4f.json',
+        credentials = service_account.Credentials.from_service_account_info(
+            st.secrets["google_credentials"],
             scopes=['https://www.googleapis.com/auth/spreadsheets', 
                    'https://www.googleapis.com/auth/drive', 
                    'https://www.googleapis.com/auth/drive.readonly']
@@ -289,7 +289,7 @@ def load_data():
     if drive_service:
         try:
             # File ID from the URL
-            file_id = file_id
+            file_id = '1ucEOV4c1ayKizMtV0Z5k7j-sKcnNniMs'
             
             # Create a temporary file to store the downloaded content
             with tempfile.NamedTemporaryFile(delete=False, suffix='.xlsx') as temp_file:
@@ -617,7 +617,7 @@ with col1:
             
             if drive_service:
                 # Folder ID from the shared link
-                folder_id = folder_id
+                folder_id = "1oG4H-FS5V_t9LRLkLYyO0kxyzzE7NoVf"
                 
                 # Get document content
                 doc_content = get_google_doc_content(drive_service, folder_id, selected_acronym)
